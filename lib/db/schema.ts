@@ -18,6 +18,7 @@ export const todos = sqliteTable('todos', {
   completed: integer('completed', { mode: 'boolean' }).notNull().default(false),
   priority: text('priority').notNull().default('medium'),
   dueDate: integer('due_date', { mode: 'timestamp' }),
+  userId: integer('user_id').notNull().references(() => users.id),
   createdAt: integer('created_at', { mode: 'timestamp' }).$defaultFn(() => new Date()),
   updatedAt: integer('updated_at', { mode: 'timestamp' }).$defaultFn(() => new Date()),
 })

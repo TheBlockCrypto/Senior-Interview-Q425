@@ -32,6 +32,7 @@ const seedTodos = [
     completed: false,
     priority: "high",
     dueDate: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000), // 1 day from now
+    userId: 1,
   },
   {
     title: "Update post states from the post component",
@@ -40,38 +41,34 @@ const seedTodos = [
     completed: false,
     priority: "high",
     dueDate: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000), // 1 day from now
+    userId: 1,
   },
   {
     title: "Add login and registration system",
     description:
-      "Create secure user authentication with cookie-based sessions for the platform.",
+      "We have basic `/login` and `/register pages with validated endpoints. Lets finish this flow up. How will the browser know if a user is logged in?",
     completed: false,
     priority: "high",
     dueDate: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000), // 1 day from now
+    userId: 2,
   },
   {
     title: "Connect todos to user accounts",
     description:
-      "Establish database relationships so each todo belongs to a specific user.",
+      "Make sure every todo has a user tied to it. No note should be anonymous.",
     completed: false,
     priority: "high",
     dueDate: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000), // 2 days from now
-  },
-  {
-    title: "Build public todo feed",
-    description:
-      "Create a timeline where users can see todos shared by the community.",
-    completed: false,
-    priority: "medium",
-    dueDate: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000), // 3 days from now
+    userId: 2,
   },
   {
     title: "Add user profile pages",
     description:
-      "Build pages where users can view each other's public todo history and activity.",
+      "Build basic unauthenticated pages where users can view each other's public todo notes. States dont matter.",
     completed: false,
     priority: "medium",
     dueDate: new Date(Date.now() + 4 * 24 * 60 * 60 * 1000), // 4 days from now
+    userId: 3,
   },
   {
     title: "Allow users to like and unlike posts",
@@ -80,6 +77,7 @@ const seedTodos = [
     completed: false,
     priority: "low",
     dueDate: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000), // 5 days from now
+    userId: 1,
   },
   {
     title: "Add real-time updates to todo feed",
@@ -88,14 +86,16 @@ const seedTodos = [
     completed: false,
     priority: "low",
     dueDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days from now
+    userId: 2,
   },
   {
     title: "Show all registered users on homepage",
     description:
-      "Display a directory of users with links to their profiles. Would be nice (not necessary) if we only show *active* users",
+      "Display a small directory of users on the homepage, like a video game lobby or how Figma shows icons on top. Would be nice (not necessary) if we only show *active* users",
     completed: false,
     priority: "low",
     dueDate: new Date(Date.now() + 6 * 24 * 60 * 60 * 1000), // 6 days from now
+    userId: 3,
   },
 ];
 
@@ -125,4 +125,3 @@ async function seed() {
 }
 
 seed();
-
