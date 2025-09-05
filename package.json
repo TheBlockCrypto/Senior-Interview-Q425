@@ -1,0 +1,33 @@
+{
+  "name": "nuxt-app",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:seed": "npx tsx lib/db/seed.ts",
+    "db:reset": "npx tsx lib/db/reset.ts && npm run db:seed",
+    "init": "npx tsx lib/db/migrate.ts && npm run db:seed"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.13",
+    "@vueuse/core": "^13.9.0",
+    "better-sqlite3": "^12.2.0",
+    "drizzle-kit": "^0.31.4",
+    "drizzle-orm": "^0.44.5",
+    "nuxt": "^4.1.0",
+    "tailwindcss": "^4.1.13",
+    "unstorage": "^1.17.1",
+    "vue": "^3.5.20",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13"
+  }
+}
