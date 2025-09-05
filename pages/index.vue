@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-const { data, pending } = await useFetch("/api/todos/1");
+const { data, pending } = await useFetch("/api/todos/getAll");
 
 const websocket = inject("websocket");
 

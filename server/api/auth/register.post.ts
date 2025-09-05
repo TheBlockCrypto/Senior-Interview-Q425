@@ -37,6 +37,8 @@ export default defineEventHandler(async (event) => {
 
     const user = newUsers[0];
 
+    setCookie(event, 'username', username.trin())
+
     return {
       success: true,
       data: {

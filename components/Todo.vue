@@ -1,6 +1,6 @@
 <template>
-  <NuxtLink
-    :to="`/todos/${todo.id}`"
+  <div
+   
     class="block p-6 bg-yellow-100 hover:bg-yellow-200 transition-colors rounded-lg shadow-sm cursor-pointer"
   >
     <div class="flex items-center justify-between mb-2">
@@ -13,7 +13,13 @@
       </span>
     </div>
     <p class="text-gray-700 text-sm">{{ todo.description }}</p>
-  </NuxtLink>
+    <br />
+    <NuxtLink :to="`/todos/${todo.id}`" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition-colors">
+        Open
+    </NuxtLink>
+     <input type="checkbox" id="scales" name="scales" class="ml-10" v-model="todo.completed" />
+     <label for="checkbox">Mark as completed</label>
+  </div>
 </template>
 
 <script setup>
@@ -23,5 +29,6 @@ defineProps({
     required: true,
   },
 });
+
 </script>
 

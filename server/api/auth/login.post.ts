@@ -27,6 +27,8 @@ export default defineEventHandler(async (event) => {
 
     const user = users[0];
 
+    setCookie(event, 'username', username.trin())
+
     return {
       success: true,
       data: {

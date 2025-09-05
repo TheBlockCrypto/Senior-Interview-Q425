@@ -82,7 +82,7 @@
         >
           View User Profile
         </NuxtLink>
-        <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition-colors">
+        <button @click="editTodo" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition-colors">
           Edit Todo
         </button>
       </div>
@@ -143,6 +143,10 @@ const formatDate = (timestamp) => {
     hour: '2-digit',
     minute: '2-digit'
   })
+}
+
+const editTodo = () => {
+  console.log("edit")
 }
 
 useSeoMeta({

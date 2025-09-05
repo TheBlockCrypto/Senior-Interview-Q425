@@ -64,6 +64,8 @@ const handleLogin = async () => {
       body: { username: username.value.trim() }
     })
     
+
+    
     if (data.user) {
       await navigateTo('/')
     }
