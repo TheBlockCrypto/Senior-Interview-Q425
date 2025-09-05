@@ -21,7 +21,7 @@
     "better-sqlite3": "^12.2.0",
     "drizzle-kit": "^0.31.4",
     "drizzle-orm": "^0.44.5",
-    "nuxt": "^4.1.0",
+    "nuxt": "^3.19.0",
     "tailwindcss": "^4.1.13",
     "unstorage": "^1.17.1",
     "vue": "^3.5.20",
