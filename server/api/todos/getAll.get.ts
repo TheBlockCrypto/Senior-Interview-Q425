@@ -1,5 +1,5 @@
 import { db, schema } from "../../../lib/db";
-import { eq } from "drizzle-orm";
+import { eq, isNotNull } from "drizzle-orm";
 
 export default defineEventHandler(async (event) => {
     const query = getQuery(event);
@@ -9,6 +9,7 @@ export default defineEventHandler(async (event) => {
             const todos = await db
                 .select()
                 .from(schema.todos)
+                .where(isNotNull(schema.todos.userId))
                 .limit(100);
 
             return todos;        
@@ -29,6 +30,7 @@ export default defineEventHandler(async (event) => {
                 .select()
                 .from(schema.todos)
                 .where(eq(schema.todos.completed, status))
+                .where(isNotNull(schema.todos.userId))
                 .limit(100);
 
             return todos;        
