@@ -31,6 +31,8 @@ const props = defineProps({
   },
 });
 
+console.log(props.todo)
+
 const markToDoAsCompleted = async () => {
   if (props.todo.completed === false) {
     await $fetch('/api/todos/updateTodoStatus', {
