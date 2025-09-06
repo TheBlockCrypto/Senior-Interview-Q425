@@ -17,18 +17,32 @@
     <NuxtLink :to="`/todos/${todo.id}`" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition-colors">
         Open
     </NuxtLink>
-     <input type="checkbox" id="scales" name="scales" class="ml-10" v-model="todo.completed" />
+     <input @click="markToDoAsCompleted" type="checkbox" id="scales" name="scales" class="ml-10" v-model="todo.completed" />
      <label for="checkbox">Mark as completed</label>
   </div>
 </template>
 
 <script setup>
-defineProps({
+
+const props = defineProps({
   todo: {
     type: Object,
     required: true,
   },
 });
+
+const markToDoAsCompleted = async () => {
+  if (props.todo.completed === false) {
+    await $fetch('/api/todos/updateTodoStatus', {
+    method: 'POST',
+      body: {
+        id: props.todo.id
+      }
+    })
+  }
+}
+
+
 
 </script>
 

@@ -145,7 +145,7 @@ const formatDate = (timestamp) => {
   })
 }
 
-const editTodo = () => {
+const markTodoAsCompleted = () => {
   console.log("edit")
 }
 
