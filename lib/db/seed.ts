@@ -35,6 +35,14 @@ const seedTodos = [
     userId: 1,
   },
   {
+    title: "Start your interview with The Block",
+    description: "Congrats on getting past the first step! Good luck with the rest.",
+    completed: true,
+    priority: "high",
+    dueDate: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000), // 1 day ago
+    userId: 1,
+  },
+  {
     title: "Update post states from the post component",
     description:
       "We should be able to mark a post as completed from the post 'sticky note'. It should be a checkbox.",

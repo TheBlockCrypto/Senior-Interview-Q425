@@ -19,7 +19,7 @@
           <p class="mt-2 text-gray-600">Loading todo...</p>
         </div>
         <div v-else class="text-center py-8 text-red-600">
-          Failed to load todo
+          Failed to load todo. Try running npm run init
         </div>
       </div>
     </div>

@@ -13,13 +13,13 @@ const { status, data, send, open, close } = useWebSocket(
     autoReconnect: true,
     heartbeat: true,
     onConnected() {
-      console.log("[WebSocket] Connected to server");
+      // console.log("[WebSocket] Connected to server");
     },
     onDisconnected() {
-      console.log("[WebSocket] Disconnected from server");
+      // console.log("[WebSocket] Disconnected from server");
     },
     onError(event) {
-      console.error("[WebSocket] Error:", event);
+      // console.error("[WebSocket] Error:", event);
     },
     onMessage(ws, event) {
       // console.log("[WebSocket] onMessage event:", event);
@@ -34,7 +34,7 @@ const { status, data, send, open, close } = useWebSocket(
         try {
           messageData = JSON.parse(event.data);
         } catch (error) {
-          console.log("[WebSocket] Plain text message:", event.data);
+          // console.log("[WebSocket] Plain text message:", event.data);
           return;
         }
       }
@@ -42,18 +42,18 @@ const { status, data, send, open, close } = useWebSocket(
       // Handle different message types
       if (messageData && typeof messageData === "object") {
         if (messageData.type === "broadcast") {
-          console.log(
-            "[WebSocket] 🎉 Broadcast received:",
-            messageData.message,
-          );
+          // console.log(
+          //   "[WebSocket] 🎉 Broadcast received:",
+          //   messageData.message,
+          // );
         } else if (messageData.type === "ping_broadcast") {
-          console.log("[WebSocket] 🏓 Ping broadcast:", messageData.message);
-          console.log(
-            "[WebSocket] From endpoint:",
-            messageData.endpoint,
-            "at",
-            messageData.timestamp,
-          );
+          // console.log("[WebSocket] 🏓 Ping broadcast:", messageData.message);
+          // console.log(
+          //   "[WebSocket] From endpoint:",
+          //   messageData.endpoint,
+          //   "at",
+          //   messageData.timestamp,
+          // );
         }
       }
     },
@@ -70,7 +70,7 @@ provide("websocket", {
 
 // Log connection status changes
 watch(status, (newStatus) => {
-  console.log("[WebSocket] Status changed to:", newStatus);
+  // console.log("[WebSocket] Status changed to:", newStatus);
 });
 
 // Messages are now handled in onMessage callback above
